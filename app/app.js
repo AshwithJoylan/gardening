@@ -36,13 +36,17 @@ require('./routes')(app);
 
 // Start server
 function startServer() {
-  app.angularFullstack = server.listen(8080, config.ip, function () {
-    console.log(
-      'Express server listening on %d, in %s mode',
-      8080,
-      app.get('env')
-    );
-  });
+  app.angularFullstack = server.listen(
+    process.env.PORT || 8080,
+    config.ip,
+    function () {
+      console.log(
+        'Express server listening on %d, in %s mode',
+        process.env.PORT || 8080,
+        app.get('env')
+      );
+    }
+  );
 }
 
 setImmediate(startServer);
