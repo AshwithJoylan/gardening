@@ -30,9 +30,9 @@ module.exports = function (app) {
     app.use(express.static(path.join(config.root, '.tmp')));
   }
 
-  if (env === 'production') {
-    app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
-  }
+  // if (env === 'production') {
+  //   app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
+  // }
 
   app.set('appPath', path.join(config.root, 'client'));
   app.use(express.static(app.get('appPath')));
